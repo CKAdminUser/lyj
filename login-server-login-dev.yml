@@ -1,0 +1,26 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: login-server-login
+#  rabbitmq:
+#  host: 127.0.0.1
+#  port: 5672
+#  username: guest
+#  password: guest
+  management:
+    endpoints:
+    web:
+    exposure:
+    include: bus-refresh
+
+    #建议暴露所有的端⼝
+    management:
+      endpoints:
+      web:
+      exposure:
+      include: "*"
+login-server-code:
+  ribbon:
+    ConnectTimeout: 5000
+    ReadTimeout: 5000
